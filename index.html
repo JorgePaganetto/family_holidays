@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Opciones de Vacaciones Familiares 2024</title>
+    <title>Vacaciones Familiares 2024</title>
     <style>
         body {
             font-family: 'Arial', sans-serif;
@@ -35,6 +35,10 @@
             height: 200px;
             object-fit: cover;
             border-radius: 5px;
+            transition: transform 0.3s;
+        }
+        .image-gallery img:hover {
+            transform: scale(1.03);
         }
         .itinerary-day {
             background-color: #e8f4fc;
@@ -42,6 +46,13 @@
             margin: 10px 0;
             border-left: 4px solid #3498db;
             border-radius: 0 5px 5px 0;
+        }
+        .day-image {
+            width: 200px;
+            height: 150px;
+            object-fit: cover;
+            margin: 5px 0;
+            border-radius: 5px;
         }
         .budget {
             background-color: #e8f8f0;
@@ -69,6 +80,14 @@
         .cons {
             background-color: #fde8e8;
         }
+        @media (max-width: 600px) {
+            .image-gallery img {
+                width: 200px;
+            }
+            .pros-cons {
+                flex-direction: column;
+            }
+        }
     </style>
 </head>
 <body>
@@ -79,26 +98,32 @@
     <div class="destination" id="dolomitas">
         <h2>1. Dolomitas, Italia (Vuelo a Venecia)</h2>
         <div class="image-gallery">
-            <img src="https://images.unsplash.com/photo-1605540436563-5bca919ae766?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Tre Cime di Lavaredo">
-            <img src="https://images.unsplash.com/photo-1575728250260-3689e9eef937?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Lago di Braies">
-            <img src="https://images.unsplash.com/photo-1603216663649-bb5b8448ff04?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Val Gardena">
+            <img src="https://images.unsplash.com/photo-1596436889106-be35e843f974?ixlib=rb-1.2.1&auto=format&fit=crop&w=1200&q=80" alt="Val Gardena en verano">
+            <img src="https://images.unsplash.com/photo-1605540436563-5bca919ae766?ixlib=rb-1.2.1&auto=format&fit=crop&w=1200&q=80" alt="Lago di Braies">
+            <img src="https://images.unsplash.com/photo-1575728250260-3689e9eef937?ixlib=rb-1.2.1&auto=format&fit=crop&w=1200&q=80" alt="Seceda en verano">
+            <img src="https://images.unsplash.com/photo-1501594907352-04cda38ebc29?ixlib=rb-1.2.1&auto=format&fit=crop&w=1200&q=80" alt="San Candido">
+            <img src="https://images.unsplash.com/photo-1600185476731-b4a1b7ef6134?ixlib=rb-1.2.1&auto=format&fit=crop&w=1200&q=80" alt="Bicicletas en Dolomitas">
         </div>
 
         <h3>Itinerario (5 días)</h3>
         <div class="itinerary-day">
-            <strong>Día 1:</strong> Vuelo Barcelona-Venecia. Recogida de coches y traslado a Val Gardena (3h). Tarde relajada en el alojamiento.
+            <strong>Día 1:</strong> Vuelo Barcelona-Venecia. Traslado a Val Gardena (3h). Tarde relajada en el alojamiento.
+            <img src="https://images.unsplash.com/photo-1597074866923-dc0589150358?ixlib=rb-1.2.1&auto=format&fit=crop&w=1200&q=80" alt="Chalet en Dolomitas" class="day-image">
         </div>
         <div class="itinerary-day">
-            <strong>Día 2:</strong> Excursión familiar al Lago di Braies (senderismo suave + fotos). Tarde en el pueblo de San Candido (helados y paseo).
+            <strong>Día 2:</strong> Excursión al Lago di Braies (senderismo suave + fotos). Tarde en San Candido (helados y paseo).
+            <img src="https://images.unsplash.com/photo-1623058455421-1a23f9a0e210?ixlib=rb-1.2.1&auto=format&fit=crop&w=1200&q=80" alt="Familia en Lago di Braies" class="day-image">
         </div>
         <div class="itinerary-day">
-            <strong>Día 3:</strong> Teleférico a Seceda (vistas panorámicas). Ruta en bicicleta por Val Gardena (alquiler para adultos y niños).
+            <strong>Día 3:</strong> Teleférico a Seceda + ruta en bicicleta por Val Gardena (alquiler para adultos y niños).
+            <img src="https://images.unsplash.com/photo-1600856208053-e2b2d3f5b6c3?ixlib=rb-1.2.1&auto=format&fit=crop&w=1200&q=80" alt="Bicicletas en montaña" class="day-image">
         </div>
         <div class="itinerary-day">
-            <strong>Día 4:</strong> Visita a Cortina d'Ampezzo (mercado local) + tarde en lago Misurina (actividades acuáticas para niños).
+            <strong>Día 4:</strong> Visita a Cortina d'Ampezzo + tarde en Lago Misurina (actividades acuáticas).
+            <img src="https://images.unsplash.com/photo-1603216663649-bb5b8448ff04?ixlib=rb-1.2.1&auto=format&fit=crop&w=1200&q=80" alt="Cortina d'Ampezzo" class="day-image">
         </div>
         <div class="itinerary-day">
-            <strong>Día 5:</strong> Regreso a Venecia (parada en pueblo de Ortisei para compras). Vuelo de regreso.
+            <strong>Día 5:</strong> Regreso a Venecia (parada en Ortisei para compras). Vuelo de regreso.
         </div>
 
         <div class="pros-cons">
@@ -106,15 +131,14 @@
                 <h4>Ventajas</h4>
                 <ul>
                     <li>Naturaleza espectacular</li>
-                    <li>Actividades para todas las edades</li>
                     <li>Clima fresco en verano</li>
+                    <li>Actividades para todas las edades</li>
                 </ul>
             </div>
             <div class="cons">
                 <h4>Desventajas</h4>
                 <ul>
-                    <li>Requiere más desplazamientos en coche</li>
-                    <li>Alojamientos más caros</li>
+                    <li>Requiere más desplazamientos</li>
                     <li>Algunas rutas no aptas para cochecitos</li>
                 </ul>
             </div>
@@ -133,23 +157,29 @@
     <div class="destination" id="portugal">
         <h2>2. Costa de Portugal (Lisboa)</h2>
         <div class="image-gallery">
-            <img src="https://images.unsplash.com/photo-1528785198459-ec50485704c7?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Praia da Adraga">
-            <img src="https://images.unsplash.com/photo-1557941760-987c3f403c1e?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Sintra">
-            <img src="https://images.unsplash.com/photo-1560717843-d6fe7ef12a9f?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Cabo da Roca">
+            <img src="https://images.unsplash.com/photo-1528785198459-ec50485704c7?ixlib=rb-1.2.1&auto=format&fit=crop&w=1200&q=80" alt="Praia da Adraga">
+            <img src="https://images.unsplash.com/photo-1560717843-d6fe7ef12a9f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1200&q=80" alt="Familia en playa portuguesa">
+            <img src="https://images.unsplash.com/photo-1557941760-987c3f403c1e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1200&q=80" alt="Palacio da Pena">
+            <img src="https://images.unsplash.com/photo-1579613832124-696d80c45c63?ixlib=rb-1.2.1&auto=format&fit=crop&w=1200&q=80" alt="Cabo da Roca">
+            <img src="https://images.unsplash.com/photo-1623058455421-1a23f9a0e210?ixlib=rb-1.2.1&auto=format&fit=crop&w=1200&q=80" alt="Barco en Arrábida">
         </div>
 
         <h3>Itinerario (5 días)</h3>
         <div class="itinerary-day">
-            <strong>Día 1:</strong> Vuelo Barcelona-Lisboa. Traslado a Cascais (40 min). Tarde en playa de Guincho.
+            <strong>Día 1:</strong> Vuelo Barcelona-Lisboa. Traslado a Cascais. Tarde en playa de Guincho.
+            <img src="https://images.unsplash.com/photo-1506929562872-bb421503ef21?ixlib=rb-1.2.1&auto=format&fit=crop&w=1200&q=80" alt="Casa en Cascais" class="day-image">
         </div>
         <div class="itinerary-day">
-            <strong>Día 2:</strong> Mañana en Praia da Adraga (niños) + almuerzo en restaurante de marisco. Tarde en Parque Natural Sintra-Cascais (senderismo suave).
+            <strong>Día 2:</strong> Mañana en Praia da Adraga + almuerzo de marisco. Tarde en Parque Natural Sintra-Cascais.
+            <img src="https://images.unsplash.com/photo-1560717843-d6fe7ef12a9f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1200&q=80" alt="Niños en playa" class="day-image">
         </div>
         <div class="itinerary-day">
             <strong>Día 3:</strong> Excursión a Sintra (Palacio da Pena) + Cabo da Roca (puesta de sol).
+            <img src="https://images.unsplash.com/photo-1557941760-987c3f403c1e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1200&q=80" alt="Palacio da Pena" class="day-image">
         </div>
         <div class="itinerary-day">
-            <strong>Día 4:</strong> Día de playa en Praia do Magoito + paseo en barco por la costa de Arrábida (opcional).
+            <strong>Día 4:</strong> Día de playa en Praia do Magoito + paseo en barco por Arrábida.
+            <img src="https://images.unsplash.com/photo-1623058455421-1a23f9a0e210?ixlib=rb-1.2.1&auto=format&fit=crop&w=1200&q=80" alt="Barco en costa" class="day-image">
         </div>
         <div class="itinerary-day">
             <strong>Día 5:</strong> Mañana en Lisboa (Torre de Belém). Vuelo de regreso.
@@ -168,7 +198,7 @@
                 <h4>Desventajas</h4>
                 <ul>
                     <li>Puede hacer mucho calor</li>
-                    <li>Menos variedad de actividades de montaña</li>
+                    <li>Menos actividades de montaña</li>
                 </ul>
             </div>
         </div>
@@ -186,26 +216,32 @@
     <div class="destination" id="garda">
         <h2>3. Lago di Garda, Italia (Aeropuerto: Verona)</h2>
         <div class="image-gallery">
-            <img src="https://images.unsplash.com/photo-1600209149640-5d38a1e952d3?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Lago di Garda">
-            <img src="https://images.unsplash.com/photo-1605545583248-9b1f1ac0f0a3?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Malcesine">
-            <img src="https://images.unsplash.com/photo-1605545583248-9b1f1ac0f0a3?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Riva del Garda">
+            <img src="https://images.unsplash.com/photo-1600209149640-5d38a1e952d3?ixlib=rb-1.2.1&auto=format&fit=crop&w=1200&q=80" alt="Malcesine">
+            <img src="https://images.unsplash.com/photo-1605545583248-9b1f1ac0f0a3?ixlib=rb-1.2.1&auto=format&fit=crop&w=1200&q=80" alt="Riva del Garda">
+            <img src="https://images.unsplash.com/photo-1600856208053-e2b2d3f5b6c3?ixlib=rb-1.2.1&auto=format&fit=crop&w=1200&q=80" alt="Bicicletas en lago">
+            <img src="https://images.unsplash.com/photo-1623058455421-1a23f9a0e210?ixlib=rb-1.2.1&auto=format&fit=crop&w=1200&q=80" alt="Kayak en Garda">
+            <img src="https://images.unsplash.com/photo-1603216663649-bb5b8448ff04?ixlib=rb-1.2.1&auto=format&fit=crop&w=1200&q=80" alt="Sirmione">
         </div>
 
         <h3>Itinerario (5 días)</h3>
         <div class="itinerary-day">
-            <strong>Día 1:</strong> Vuelo Barcelona-Verona. Traslado a Malcesine (1.5h). Tarde explorando el pueblo.
+            <strong>Día 1:</strong> Vuelo Barcelona-Verona. Traslado a Malcesine. Tarde explorando el pueblo.
+            <img src="https://images.unsplash.com/photo-1597074866923-dc0589150358?ixlib=rb-1.2.1&auto=format&fit=crop&w=1200&q=80" alt="Alojamiento en Garda" class="day-image">
         </div>
         <div class="itinerary-day">
-            <strong>Día 2:</strong> Teleférico al Monte Baldo (vistas) + senderismo adaptado. Tarde de kayak en el lago.
+            <strong>Día 2:</strong> Teleférico al Monte Baldo + senderismo adaptado. Tarde de kayak en el lago.
+            <img src="https://images.unsplash.com/photo-1623058455421-1a23f9a0e210?ixlib=rb-1.2.1&auto=format&fit=crop&w=1200&q=80" alt="Kayak en lago" class="day-image">
         </div>
         <div class="itinerary-day">
-            <strong>Día 3:</strong> Excursión a Limone sul Garda (paseo en bici por la costa) + parque acuático para niños.
+            <strong>Día 3:</strong> Excursión a Limone sul Garda (paseo en bici) + parque acuático.
+            <img src="https://images.unsplash.com/photo-1600856208053-e2b2d3f5b6c3?ixlib=rb-1.2.1&auto=format&fit=crop&w=1200&q=80" alt="Bicicletas en lago" class="day-image">
         </div>
         <div class="itinerary-day">
-            <strong>Día 4:</strong> Día en Riva del Garda (windsurf para adultos, parque infantil para niños).
+            <strong>Día 4:</strong> Día en Riva del Garda (windsurf + parque infantil).
+            <img src="https://images.unsplash.com/photo-1605545583248-9b1f1ac0f0a3?ixlib=rb-1.2.1&auto=format&fit=crop&w=1200&q=80" alt="Riva del Garda" class="day-image">
         </div>
         <div class="itinerary-day">
-            <strong>Día 5:</strong> Mañana en Sirmione (termas). Vuelo de regreso desde Verona.
+            <strong>Día 5:</strong> Mañana en Sirmione (termas). Vuelo de regreso.
         </div>
 
         <div class="pros-cons">
@@ -239,26 +275,32 @@
     <div class="destination" id="como">
         <h2>4. Lago di Como, Italia (Aeropuerto: Milán-Malpensa)</h2>
         <div class="image-gallery">
-            <img src="https://images.unsplash.com/photo-1579613832124-696d80c45c63?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Bellagio">
-            <img src="https://images.unsplash.com/photo-1579613832111-9c2b9da1c810?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Varenna">
-            <img src="https://images.unsplash.com/photo-1579613832125-95d9e3a16225?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Villa del Balbianello">
+            <img src="https://images.unsplash.com/photo-1579613832125-95d9e3a16225?ixlib=rb-1.2.1&auto=format&fit=crop&w=1200&q=80" alt="Villa del Balbianello">
+            <img src="https://images.unsplash.com/photo-1579613832111-9c2b9da1c810?ixlib=rb-1.2.1&auto=format&fit=crop&w=1200&q=80" alt="Varenna">
+            <img src="https://images.unsplash.com/photo-1579613832124-696d80c45c63?ixlib=rb-1.2.1&auto=format&fit=crop&w=1200&q=80" alt="Bellagio">
+            <img src="https://images.unsplash.com/photo-1623058455421-1a23f9a0e210?ixlib=rb-1.2.1&auto=format&fit=crop&w=1200&q=80" alt="Barco en Como">
+            <img src="https://images.unsplash.com/photo-1600856208053-e2b2d3f5b6c3?ixlib=rb-1.2.1&auto=format&fit=crop&w=1200&q=80" alt="Bicicletas en Como">
         </div>
 
         <h3>Itinerario (5 días)</h3>
         <div class="itinerary-day">
-            <strong>Día 1:</strong> Vuelo Barcelona-Malpensa. Traslado a Tremezzo (1.5h). Tarde en la villa.
+            <strong>Día 1:</strong> Vuelo Barcelona-Malpensa. Traslado a Tremezzo. Tarde en la villa.
+            <img src="https://images.unsplash.com/photo-1597074866923-dc0589150358?ixlib=rb-1.2.1&auto=format&fit=crop&w=1200&q=80" alt="Villa en Como" class="day-image">
         </div>
         <div class="itinerary-day">
-            <strong>Día 2:</strong> Barco a Bellagio (mercado local) + paseo por los jardines de Villa Melzi.
+            <strong>Día 2:</strong> Barco a Bellagio (mercado local) + jardines de Villa Melzi.
+            <img src="https://images.unsplash.com/photo-1579613832124-696d80c45c63?ixlib=rb-1.2.1&auto=format&fit=crop&w=1200&q=80" alt="Bellagio" class="day-image">
         </div>
         <div class="itinerary-day">
-            <strong>Día 3:</strong> Senderismo en Greenway del Lago (6 km, parcialmente con cochecito). Tarde en playa de Lenno.
+            <strong>Día 3:</strong> Senderismo en Greenway del Lago (6 km). Tarde en playa de Lenno.
+            <img src="https://images.unsplash.com/photo-1623058455421-1a23f9a0e210?ixlib=rb-1.2.1&auto=format&fit=crop&w=1200&q=80" alt="Senderismo en Como" class="day-image">
         </div>
         <div class="itinerary-day">
-            <strong>Día 4:</strong> Excursión a Varenna (visita a Villa Monastero) + paseo en bicicleta.
+            <strong>Día 4:</strong> Excursión a Varenna (Villa Monastero) + paseo en bicicleta.
+            <img src="https://images.unsplash.com/photo-1579613832111-9c2b9da1c810?ixlib=rb-1.2.1&auto=format&fit=crop&w=1200&q=80" alt="Varenna" class="day-image">
         </div>
         <div class="itinerary-day">
-            <strong>Día 5:</strong> Mañana en Como (catedral + paseo en funicular). Vuelo de regreso.
+            <strong>Día 5:</strong> Mañana en Como (catedral + funicular). Vuelo de regreso.
         </div>
 
         <div class="pros-cons">
@@ -266,7 +308,7 @@
                 <h4>Ventajas</h4>
                 <ul>
                     <li>Entorno de lujo y relajante</li>
-                    <li>Transporte en barco muy pintoresco</li>
+                    <li>Transporte en barco pintoresco</li>
                     <li>Menos masificado que Garda</li>
                 </ul>
             </div>
@@ -288,7 +330,7 @@
         </div>
     </div>
 
-    <div style="text-align: center; margin-top: 40px;">
+    <div style="text-align: center; margin-top: 40px; padding: 20px; background-color: #e8f4fc; border-radius: 10px;">
         <h3>¿Cuál prefieres? ¡Vota en el grupo familiar! 😊</h3>
         <p>Para más detalles, consulta los enlaces de Airbnb o Skyscanner con fechas exactas.</p>
     </div>
