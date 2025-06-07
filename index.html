@@ -1,3 +1,6 @@
+Here's the complete updated HTML code with interactive maps for each destination, driving times between locations, and enhanced visual design:
+
+```html
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -553,4 +556,164 @@
     <div class="destination" id="garda">
         <h2>Lago di Garda, Italia (Aeropuerto: Verona)</h2>
         
-        <div
+        <div class="image-gallery">
+            <img src="https://images.unsplash.com/photo-1600209149640-5d38a1e952d3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80" alt="Malcesine">
+            <img src="https://images.unsplash.com/photo-1605545583248-9b1f1ac0f0a3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80" alt="Riva del Garda">
+            <img src="https://images.unsplash.com/photo-1600856208053-e2b2d3f5b6c3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80" alt="Bicicletas en lago">
+            <img src="https://images.unsplash.com/photo-1623058455421-1a23f9a0e210?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80" alt="Kayak en Garda">
+            <img src="https://images.unsplash.com/photo-1603216663649-bb5b8448ff04?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80" alt="Sirmione">
+        </div>
+
+        <div class="map-container">
+            <div id="map-garda" class="map"></div>
+            <div class="map-legend">
+                <div class="legend-item"><span class="legend-color" style="background: #e74c3c;"></span> Aeropuerto</div>
+                <div class="legend-item"><span class="legend-color" style="background: #3498db;"></span> Alojamiento</div>
+                <div class="legend-item"><span class="legend-color" style="background: #2ecc71;"></span> Atracciones</div>
+            </div>
+        </div>
+
+        <div class="itinerary">
+            <h3>Itinerario (5 días)</h3>
+            
+            <div class="itinerary-day">
+                <strong>Día 1: Llegada a Malcesine <span class="drive-time">1h 30min desde Verona</span></strong>
+                <p>Vuelo Barcelona-Verona. Traslado a Malcesine (1h30 en coche). Tarde explorando este pueblo medieval con castillo. Paseo junto al lago al atardecer.</p>
+                <div class="day-images">
+                    <img src="https://images.unsplash.com/photo-1600209149640-5d38a1e952d3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Malcesine" class="day-image">
+                    <img src="https://images.unsplash.com/photo-1597074866923-dc0589150358?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Alojamiento en lago" class="day-image">
+                </div>
+            </div>
+            
+            <div class="itinerary-day">
+                <strong>Día 2: Monte Baldo y kayak <span class="drive-time">10min al teleférico</span></strong>
+                <p>Teleférico al Monte Baldo (10 min en coche - vistas panorámicas). Senderismo adaptado para niños. Tarde de kayak en el lago (alquiler en Malcesine).</p>
+                <div class="day-images">
+                    <img src="https://images.unsplash.com/photo-1623058455421-1a23f9a0e210?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Monte Baldo" class="day-image">
+                    <img src="https://images.unsplash.com/photo-1623058455421-1a23f9a0e210?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Kayak en lago" class="day-image">
+                </div>
+            </div>
+            
+            <div class="itinerary-day">
+                <strong>Día 3: Limone sul Garda y parque acuático <span class="drive-time">45min a Limone</span></strong>
+                <p>Excursión a Limone sul Garda (45 min en coche - paseo en bici por la costa). Almuerzo en este pueblo de limones. Tarde en parque acuático para niños.</p>
+                <div class="day-images">
+                    <img src="https://images.unsplash.com/photo-1600856208053-e2b2d3f5b6c3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Limone sul Garda" class="day-image">
+                    <img src="https://images.unsplash.com/photo-1603216663649-bb5b8448ff04?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Parque acuático" class="day-image">
+                </div>
+            </div>
+            
+            <div class="itinerary-day">
+                <strong>Día 4: Riva del Garda <span class="drive-time">1h a Riva</span></strong>
+                <p>Día completo en Riva del Garda (1h en coche - windsurf para adultos, parque infantil para niños). Almuerzo en el puerto deportivo.</p>
+                <div class="day-images">
+                    <img src="https://images.unsplash.com/photo-1605545583248-9b1f1ac0f0a3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Riva del Garda" class="day-image">
+                    <img src="https://images.unsplash.com/photo-1623058455421-1a23f9a0e210?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Windsurf" class="day-image">
+                </div>
+            </div>
+            
+            <div class="itinerary-day">
+                <strong>Día 5: Sirmione y regreso <span class="drive-time">1h 15min a Verona</span></strong>
+                <p>Mañana en Sirmione (termas naturales). Almuerzo en el centro histórico. Traslado al aeropuerto de Verona (1h15) para vuelo de regreso a Barcelona.</p>
+                <div class="day-images">
+                    <img src="https://images.unsplash.com/photo-1603216663649-bb5b8448ff04?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Sirmione" class="day-image">
+                    <img src="https://images.unsplash.com/photo-1623058455421-1a23f9a0e210?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Termas" class="day-image">
+                </div>
+            </div>
+        </div>
+
+        <div class="pros-cons">
+            <div class="pros">
+                <h4>Ventajas</h4>
+                <ul>
+                    <li>Actividades acuáticas y de montaña combinadas</li>
+                    <li>Infraestructura muy familiar y adaptada</li>
+                    <li>Pueblos pintorescos con encanto italiano</li>
+                    <li>Clima agradable en verano</li>
+                </ul>
+            </div>
+            <div class="cons">
+                <h4>Desventajas</h4>
+                <ul>
+                    <li>Zona muy turística en julio (puede haber aglomeraciones)</li>
+                    <li>Parking complicado en los pueblos</li>
+                    <li>Algunas atracciones pueden tener colas</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="budget">
+            <h3>Presupuesto aproximado</h3>
+            <p><strong>Alojamiento:</strong> €1,500 (5 noches en casa con vistas al lago para 10 personas)</p>
+            <p><strong>Vuelos:</strong> €1,620 (Barcelona-Verona ida y vuelta para 10 personas)</p>
+            <p><strong>2 coches de alquiler (7 plazas cada uno):</strong> €1,000 (incluye gasolina y peajes)</p>
+            <p class="total-price"><strong>Total estimado:</strong> <span class="highlight">€4,120</span></p>
+        </div>
+    </div>
+
+    <!-- LAGO DI COMO -->
+    <div class="destination" id="como">
+        <h2>Lago di Como, Italia (Aeropuerto: Milán-Malpensa)</h2>
+        
+        <div class="image-gallery">
+            <img src="https://images.unsplash.com/photo-1579613832125-95d9e3a16225?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80" alt="Villa del Balbianello">
+            <img src="https://images.unsplash.com/photo-1579613832111-9c2b9da1c810?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80" alt="Varenna">
+            <img src="https://images.unsplash.com/photo-1579613832124-696d80c45c63?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80" alt="Bellagio">
+            <img src="https://images.unsplash.com/photo-1623058455421-1a23f9a0e210?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80" alt="Barco en Como">
+            <img src="https://images.unsplash.com/photo-1600856208053-e2b2d3f5b6c3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80" alt="Bicicletas en Como">
+        </div>
+
+        <div class="map-container">
+            <div id="map-como" class="map"></div>
+            <div class="map-legend">
+                <div class="legend-item"><span class="legend-color" style="background: #e74c3c;"></span> Aeropuerto</div>
+                <div class="legend-item"><span class="legend-color" style="background: #3498db;"></span> Alojamiento</div>
+                <div class="legend-item"><span class="legend-color" style="background: #2ecc71;"></span> Atracciones</div>
+            </div>
+        </div>
+
+        <div class="itinerary">
+            <h3>Itinerario (5 días)</h3>
+            
+            <div class="itinerary-day">
+                <strong>Día 1: Llegada a Tremezzo <span class="drive-time">1h 30min desde Milán</span></strong>
+                <p>Vuelo Barcelona-Malpensa. Traslado a Tremezzo (1h30 en coche). Tarde en la villa con vistas al lago. Paseo al atardecer por el paseo marítimo.</p>
+                <div class="day-images">
+                    <img src="https://images.unsplash.com/photo-1597074866923-dc0589150358?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Villa en Como" class="day-image">
+                    <img src="https://images.unsplash.com/photo-1579613832125-95d9e3a16225?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Tremezzo" class="day-image">
+                </div>
+            </div>
+            
+            <div class="itinerary-day">
+                <strong>Día 2: Bellagio y Villa Melzi <span class="drive-time">30min en barco</span></strong>
+                <p>Barco a Bellagio (30 min - mercado local y tiendas). Visita a los jardines de Villa Melzi (ideal para niños). Almuerzo con vistas al lago.</p>
+                <div class="day-images">
+                    <img src="https://images.unsplash.com/photo-1579613832124-696d80c45c63?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Bellagio" class="day-image">
+                    <img src="https://images.unsplash.com/photo-1623058455421-1a23f9a0e210?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Villa Melzi" class="day-image">
+                </div>
+            </div>
+            
+            <div class="itinerary-day">
+                <strong>Día 3: Greenway del Lago y Lenno <span class="drive-time">20min en coche</span></strong>
+                <p>Senderismo en Greenway del Lago (6 km parcialmente con cochecito). Almuerzo en Lenno. Tarde en playa de Lenno (actividades acuáticas).</p>
+                <div class="day-images">
+                    <img src="https://images.unsplash.com/photo-1623058455421-1a23f9a0e210?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Greenway" class="day-image">
+                    <img src="https://images.unsplash.com/photo-1600856208053-e2b2d3f5b6c3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Playa Lenno" class="day-image">
+                </div>
+            </div>
+            
+            <div class="itinerary-day">
+                <strong>Día 4: Varenna y Villa Monastero <span class="drive-time">45min en barco</span></strong>
+                <p>Excursión a Varenna (45 min en barco - visita a Villa Monastero). Paseo en bicicleta por la costa. Almuerzo en restaurante con terraza al lago.</p>
+                <div class="day-images">
+                    <img src="https://images.unsplash.com/photo-1579613832111-9c2b9da1c810?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Varenna" class="day-image">
+                    <img src="https://images.unsplash.com/photo-1623058455421-1a23f9a0e210?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Villa Monastero" class="day-image">
+                </div>
+            </div>
+            
+            <div class="itinerary-day">
+                <strong>Día 5: Como y regreso <span class="drive-time">1h a Milán</span></strong>
+                <p>Mañana en Como (catedral y paseo en funicular). Almuerzo en el centro histórico. Traslado al aeropuerto de Milán-Malpensa (1h) para vuelo de regreso.</p>
+                <div class="day-images">
+                    <img src="https://images.unsplash.com/photo-1579613832124-696d80c45c63?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Como" class="day-image">
+                    <img src="https://images.unsplash.com/photo-1623058455421-1a23f9a0e210?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Funicular" class="day-image
