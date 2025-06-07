@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vacaciones Familiares Verano 2024</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
     <style>
         :root {
             --primary: #2c3e50;
@@ -97,6 +98,45 @@
             box-shadow: 0 5px 15px rgba(0,0,0,0.3);
         }
         
+        .map-container {
+            height: 400px;
+            margin: 25px 0;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            position: relative;
+        }
+        
+        .map {
+            height: 100%;
+            width: 100%;
+        }
+        
+        .map-legend {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            background: white;
+            padding: 10px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+            z-index: 1000;
+            font-size: 0.9rem;
+        }
+        
+        .legend-item {
+            display: flex;
+            align-items: center;
+            margin: 5px 0;
+        }
+        
+        .legend-color {
+            width: 15px;
+            height: 15px;
+            margin-right: 8px;
+            border-radius: 3px;
+        }
+        
         .itinerary {
             margin-top: 30px;
         }
@@ -140,6 +180,17 @@
             font-size: 1.1rem;
             position: relative;
             z-index: 1;
+        }
+        
+        .drive-time {
+            display: inline-block;
+            background-color: #e3f2fd;
+            color: #1565c0;
+            padding: 3px 8px;
+            border-radius: 12px;
+            font-size: 0.85rem;
+            margin-left: 8px;
+            font-weight: bold;
         }
         
         .day-images {
@@ -257,6 +308,10 @@
                 height: auto;
                 max-height: 150px;
             }
+            
+            .map-container {
+                height: 300px;
+            }
         }
         
         @media (max-width: 480px) {
@@ -293,7 +348,7 @@
     
     <div class="intro">
         <p>Propuestas para 7 adultos, 2 niños (3 y 7 años) y 1 bebé (7 meses) - Del 22 al 27 de Julio 2024</p>
-        <p>¡Explora estas 4 increíbles opciones para disfrutar del verano en familia!</p>
+        <p>¡Explora estas 4 increíbles opciones con mapas interactivos y tiempos de traslado!</p>
     </div>
 
     <!-- DOLOMITAS -->
@@ -308,11 +363,20 @@
             <img src="https://images.unsplash.com/photo-1597074866923-dc0589150358?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80" alt="Chalet alpino">
         </div>
 
+        <div class="map-container">
+            <div id="map-dolomitas" class="map"></div>
+            <div class="map-legend">
+                <div class="legend-item"><span class="legend-color" style="background: #e74c3c;"></span> Aeropuerto</div>
+                <div class="legend-item"><span class="legend-color" style="background: #3498db;"></span> Alojamiento</div>
+                <div class="legend-item"><span class="legend-color" style="background: #2ecc71;"></span> Atracciones</div>
+            </div>
+        </div>
+
         <div class="itinerary">
             <h3>Itinerario (5 días)</h3>
             
             <div class="itinerary-day">
-                <strong>Día 1: Llegada a Val Gardena</strong>
+                <strong>Día 1: Llegada a Val Gardena <span class="drive-time">3h desde Venecia</span></strong>
                 <p>Vuelo Barcelona-Venecia. Traslado a Val Gardena (3h en coche). Tarde relajada en el alojamiento y exploración del pueblo.</p>
                 <div class="day-images">
                     <img src="https://images.unsplash.com/photo-1597074866923-dc0589150358?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Chalet en montañas" class="day-image">
@@ -321,8 +385,8 @@
             </div>
             
             <div class="itinerary-day">
-                <strong>Día 2: Lago di Braies y San Candido</strong>
-                <p>Excursión al famoso Lago di Braies (senderismo suave alrededor del lago). Almuerzo picnic. Tarde en el encantador pueblo de San Candido (helados y paseo por el centro histórico).</p>
+                <strong>Día 2: Lago di Braies y San Candido <span class="drive-time">1h 15min ida</span></strong>
+                <p>Excursión al famoso Lago di Braies (1h15 en coche - senderismo suave alrededor del lago). Almuerzo picnic. Tarde en el encantador pueblo de San Candido (helados y paseo por el centro histórico).</p>
                 <div class="day-images">
                     <img src="https://images.unsplash.com/photo-1605540436563-5bca919ae766?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Lago di Braies" class="day-image">
                     <img src="https://images.unsplash.com/photo-1501594907352-04cda38ebc29?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="San Candido" class="day-image">
@@ -330,7 +394,7 @@
             </div>
             
             <div class="itinerary-day">
-                <strong>Día 3: Seceda y bicicletas en Val Gardena</strong>
+                <strong>Día 3: Seceda y bicicletas en Val Gardena <span class="drive-time">20min al teleférico</span></strong>
                 <p>Teleférico a Seceda (vistas panorámicas espectaculares). Ruta en bicicleta por los valles de Val Gardena (alquiler de bicis para adultos y niños). Tarde libre en el alojamiento.</p>
                 <div class="day-images">
                     <img src="https://images.unsplash.com/photo-1575728250260-3689e9eef937?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Vistas desde Seceda" class="day-image">
@@ -339,8 +403,8 @@
             </div>
             
             <div class="itinerary-day">
-                <strong>Día 4: Cortina d'Ampezzo y Lago Misurina</strong>
-                <p>Visita a la elegante Cortina d'Ampezzo (mercado local y compras). Almuerzo en restaurante típico. Tarde en el Lago Misurina (actividades acuáticas para niños y paseo en bote).</p>
+                <strong>Día 4: Cortina d'Ampezzo y Lago Misurina <span class="drive-time">1h 30min ida</span></strong>
+                <p>Visita a la elegante Cortina d'Ampezzo (1h30 en coche - mercado local y compras). Almuerzo en restaurante típico. Tarde en el Lago Misurina (actividades acuáticas para niños y paseo en bote).</p>
                 <div class="day-images">
                     <img src="https://images.unsplash.com/photo-1603216663649-bb5b8448ff04?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Cortina d'Ampezzo" class="day-image">
                     <img src="https://images.unsplash.com/photo-1621173863786-6f8e9e8a9a0f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Lago Misurina" class="day-image">
@@ -348,8 +412,8 @@
             </div>
             
             <div class="itinerary-day">
-                <strong>Día 5: Regreso con parada en Ortisei</strong>
-                <p>Mañana libre para últimos paseos. Traslado al aeropuerto de Venecia con parada en Ortisei (compras de artesanía local). Vuelo de regreso a Barcelona.</p>
+                <strong>Día 5: Regreso con parada en Ortisei <span class="drive-time">3h al aeropuerto</span></strong>
+                <p>Mañana libre para últimos paseos. Traslado al aeropuerto de Venecia (3h) con parada en Ortisei (compras de artesanía local). Vuelo de regreso a Barcelona.</p>
                 <div class="day-images">
                     <img src="https://images.unsplash.com/photo-1621173863955-ccdb3c5c1c4f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Ortisei" class="day-image">
                     <img src="https://images.unsplash.com/photo-1621173863786-6f8e9e8a9a0f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Familia en Dolomitas" class="day-image">
@@ -398,11 +462,20 @@
             <img src="https://images.unsplash.com/photo-1623058455421-1a23f9a0e210?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80" alt="Barco en costa portuguesa">
         </div>
 
+        <div class="map-container">
+            <div id="map-portugal" class="map"></div>
+            <div class="map-legend">
+                <div class="legend-item"><span class="legend-color" style="background: #e74c3c;"></span> Aeropuerto</div>
+                <div class="legend-item"><span class="legend-color" style="background: #3498db;"></span> Alojamiento</div>
+                <div class="legend-item"><span class="legend-color" style="background: #2ecc71;"></span> Atracciones</div>
+            </div>
+        </div>
+
         <div class="itinerary">
             <h3>Itinerario (5 días)</h3>
             
             <div class="itinerary-day">
-                <strong>Día 1: Llegada a Cascais</strong>
+                <strong>Día 1: Llegada a Cascais <span class="drive-time">40min desde Lisboa</span></strong>
                 <p>Vuelo Barcelona-Lisboa. Traslado a Cascais (40 min). Tarde en la playa de Guincho (surf para adultos, juegos en arena para niños). Cena en restaurante frente al mar.</p>
                 <div class="day-images">
                     <img src="https://images.unsplash.com/photo-1506929562872-bb421503ef21?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Cascais" class="day-image">
@@ -411,8 +484,8 @@
             </div>
             
             <div class="itinerary-day">
-                <strong>Día 2: Praia da Adraga y Sintra-Cascais</strong>
-                <p>Mañana en la espectacular Praia da Adraga (rocas y cuevas). Almuerzo de marisco en restaurante local. Tarde de senderismo en el Parque Natural Sintra-Cascais (rutas adaptadas para niños).</p>
+                <strong>Día 2: Praia da Adraga y Sintra-Cascais <span class="drive-time">30min a Adraga</span></strong>
+                <p>Mañana en la espectacular Praia da Adraga (30 min en coche - rocas y cuevas). Almuerzo de marisco en restaurante local. Tarde de senderismo en el Parque Natural Sintra-Cascais (rutas adaptadas para niños).</p>
                 <div class="day-images">
                     <img src="https://images.unsplash.com/photo-1528785198459-ec50485704c7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Praia da Adraga" class="day-image">
                     <img src="https://images.unsplash.com/photo-1557941760-987c3f403c1e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Parque Natural" class="day-image">
@@ -420,7 +493,64 @@
             </div>
             
             <div class="itinerary-day">
-                <strong>Día 3: Sintra y Cabo da Roca</strong>
-                <p>Excursión a Sintra (visita al colorido Palacio da Pena y sus jardines). Almuerzo en el centro histórico. Tarde en Cabo da Roca (punto más occidental de Europa) para ver el atardecer.</p>
+                <strong>Día 3: Sintra y Cabo da Roca <span class="drive-time">25min a Sintra</span></strong>
+                <p>Excursión a Sintra (25 min - visita al colorido Palacio da Pena y sus jardines). Almuerzo en el centro histórico. Tarde en Cabo da Roca (punto más occidental de Europa) para ver el atardecer.</p>
                 <div class="day-images">
-                    <img src="https://images.unsplash
+                    <img src="https://images.unsplash.com/photo-1557941760-987c3f403c1e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Palacio da Pena" class="day-image">
+                    <img src="https://images.unsplash.com/photo-1560717843-d6fe7ef12a9f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Cabo da Roca" class="day-image">
+                </div>
+            </div>
+            
+            <div class="itinerary-day">
+                <strong>Día 4: Praia do Magoito y Arrábida <span class="drive-time">45min a Magoito</span></strong>
+                <p>Día completo de playa en Praia do Magoito (45 min - aguas tranquilas para niños). Por la tarde, paseo en barco por la costa de Arrábida (avistamiento de delfines opcional).</p>
+                <div class="day-images">
+                    <img src="https://images.unsplash.com/photo-1623058455421-1a23f9a0e210?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Praia do Magoito" class="day-image">
+                    <img src="https://images.unsplash.com/photo-1560717843-d6fe7ef12a9f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Barco en Arrábida" class="day-image">
+                </div>
+            </div>
+            
+            <div class="itinerary-day">
+                <strong>Día 5: Lisboa y regreso <span class="drive-time">30min a Lisboa</span></strong>
+                <p>Mañana en Lisboa (30 min - visita a la Torre de Belém y monumentos). Almuerzo en barrio de Alfama. Traslado al aeropuerto para vuelo de regreso a Barcelona.</p>
+                <div class="day-images">
+                    <img src="https://images.unsplash.com/photo-1557941760-987c3f403c1e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Torre de Belém" class="day-image">
+                    <img src="https://images.unsplash.com/photo-1623058455421-1a23f9a0e210?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Barrio de Alfama" class="day-image">
+                </div>
+            </div>
+        </div>
+
+        <div class="pros-cons">
+            <div class="pros">
+                <h4>Ventajas</h4>
+                <ul>
+                    <li>Presupuesto más económico que otras opciones</li>
+                    <li>Playas espectaculares y seguras para niños</li>
+                    <li>Menos desplazamientos necesarios</li>
+                    <li>Excelente gastronomía marinera</li>
+                </ul>
+            </div>
+            <div class="cons">
+                <h4>Desventajas</h4>
+                <ul>
+                    <li>Puede hacer mucho calor en julio</li>
+                    <li>Menos actividades de montaña</li>
+                    <li>Playas pueden estar concurridas</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="budget">
+            <h3>Presupuesto aproximado</h3>
+            <p><strong>Alojamiento:</strong> €1,750 (5 noches en villa con piscina para 10 personas)</p>
+            <p><strong>Vuelos:</strong> €900 (Barcelona-Lisboa ida y vuelta para 10 personas)</p>
+            <p><strong>2 coches de alquiler (7 plazas cada uno):</strong> €800 (incluye gasolina)</p>
+            <p class="total-price"><strong>Total estimado:</strong> <span class="highlight">€3,450</span></p>
+        </div>
+    </div>
+
+    <!-- LAGO DI GARDA -->
+    <div class="destination" id="garda">
+        <h2>Lago di Garda, Italia (Aeropuerto: Verona)</h2>
+        
+        <div
